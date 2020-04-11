@@ -1,0 +1,7 @@
+C:\Users\oskar\source\repos\Suwak\Suwak\bin\Debug\Suwak.dll
+C:\Users\oskar\source\repos\Suwak\Suwak\bin\Debug\Suwak.pdb
+C:\Users\oskar\source\repos\Suwak\Suwak\obj\Debug\Suwak.dll
+C:\Users\oskar\source\repos\Suwak\Suwak\obj\Debug\Suwak.pdb
+C:\Users\oskar\source\repos\Suwak\Suwak\obj\Debug\Suwak.Suwak.resources
+C:\Users\oskar\source\repos\Suwak\Suwak\obj\Debug\Suwak.csproj.GenerateResource.cache
+C:\Users\oskar\source\repos\Suwak\Suwak\obj\Debug\Suwak.csprojAssemblyReference.cache

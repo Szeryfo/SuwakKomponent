@@ -1,0 +1,12 @@
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\bin\Debug\SuwakTestujaca.exe.config
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\bin\Debug\SuwakTestujaca.exe
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\bin\Debug\SuwakTestujaca.pdb
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\bin\Debug\Suwak.dll
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\bin\Debug\Suwak.pdb
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\obj\Debug\SuwakTestujaca.csprojAssemblyReference.cache
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\obj\Debug\SuwakTestujaca.Form1.resources
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\obj\Debug\SuwakTestujaca.Properties.Resources.resources
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\obj\Debug\SuwakTestujaca.csproj.GenerateResource.cache
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\obj\Debug\SuwakTestujaca.csproj.CopyComplete
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\obj\Debug\SuwakTestujaca.exe
+C:\Users\oskar\source\repos\Suwak\SuwakTestujaca\obj\Debug\SuwakTestujaca.pdb
