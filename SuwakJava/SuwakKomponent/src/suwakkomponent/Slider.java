@@ -24,7 +24,8 @@ public class Slider extends Component{
     boolean rotation = false;
     String poczatek = "500";
     String koniec = "1000";
-    int wartosc;
+    int wartosc = 0;
+    String kolor = "czarny";
     
     public synchronized void paint(Graphics g){
             
@@ -32,6 +33,17 @@ public class Slider extends Component{
         //długość i szerokość komponentu
         szer = d.width-1;
         wys = d.height-1;
+        
+        if(kolor == "czarny"){
+            g.setColor(Color.black);
+        }else if(kolor == "czerwony"){
+            g.setColor(Color.red);
+        }else if(kolor == "niebieski"){
+            g.setColor(Color.blue);
+        }else if(kolor == "różowy"){
+            g.setColor(Color.pink);
+        }
+        
         
         if(rotation==false)//zależność obrotu
         {
@@ -115,43 +127,72 @@ public class Slider extends Component{
             }
         }
     }
-    public void setKlik(int szer,int wys){
-        this.wysKlik = wys;
-        this.szerKlik = szer;
+    public void setSzer(int szerr){
+        this.szerKlik = szerr;
     }
-    public void setRotate(){
+    public int getSzer(){
+        return szerKlik;
+    }
+    public void setWys(int wyss){
+        this.wysKlik = wyss;
+    }
+    public int getWys(){
+        return wysKlik;
+    }
+    
+    public void Rotate(){
         if(this.rotation==true){
             this.rotation = false;
         }else  this.rotation = true;
     }
-    public void setWartosc(){
+    public void setWartosc(int wartosc){
         if(this.rotation == true){
             if(szerKlik>(int)(szer*0.05) && szerKlik<(int)(szer*0.95)){
                 int szerokosc =(int)(this.szer*0.9);
                 int roznica = (Integer.parseInt(this.koniec) - Integer.parseInt(this.poczatek));  
-                this.wartosc=(this.szerKlik-(int)(this.szer*0.05))*roznica/szerokosc; 
-                this.wartosc+= Integer.parseInt(this.poczatek); 
+                wartosc=(this.szerKlik-(int)(this.szer*0.05))*roznica/szerokosc; 
+                wartosc+= Integer.parseInt(this.poczatek); 
             }else if(szerKlik<=(int)(szer*0.05)){
-                this.wartosc=Integer.parseInt(this.poczatek);
+                wartosc=Integer.parseInt(this.poczatek);
             }else{
-                this.wartosc=Integer.parseInt(this.koniec);
+                wartosc=Integer.parseInt(this.koniec);
             }
+            this.wartosc = wartosc;
         }else{
             if(wysKlik>(int)(wys*0.05) && wysKlik<(int)(wys*0.95)){
                 int wysokosc =(int)(this.wys*0.9);
                 int roznica = (Integer.parseInt(this.koniec) - Integer.parseInt(this.poczatek));  
-                this.wartosc =(this.wysKlik-(int)(this.wys*0.05))*roznica/wysokosc; 
-                this.wartosc+= Integer.parseInt(this.poczatek);
-                this.wartosc=this.wartosc*-1 + Integer.parseInt(this.koniec) + Integer.parseInt(this.poczatek);
+                wartosc =(this.wysKlik-(int)(this.wys*0.05))*roznica/wysokosc; 
+                wartosc+= Integer.parseInt(this.poczatek);
+                wartosc=wartosc*-1 + Integer.parseInt(this.koniec) + Integer.parseInt(this.poczatek);
             }else if(wysKlik<=(int)(wys*0.05)){
-                this.wartosc=Integer.parseInt(this.koniec);
+                wartosc=Integer.parseInt(this.koniec);
             }else{
-                this.wartosc=Integer.parseInt(this.poczatek);
+                wartosc=Integer.parseInt(this.poczatek);
             }
+            this.wartosc = wartosc;
         }
     }
     public int getWartosc(){
         return this.wartosc;
+    }
+    public void setMinimum(String minimum){
+        this.poczatek = minimum;
+    }
+    public String getMinimum(){
+        return poczatek;
+    }
+    public void setMaksimum(String maksimum){
+        this.koniec = maksimum;
+    }
+    public String getMaksimum(){
+        return koniec;
+    }
+    public void setKolor(String kr){
+        this.kolor = kr;
+    }
+    public String getKolor(){
+        return kolor;
     }
 }
 

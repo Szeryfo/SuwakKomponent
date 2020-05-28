@@ -31,6 +31,15 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
         slider1 = new suwakkomponent.Slider();
         jLabel2 = new javax.swing.JLabel();
         wartosc = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        minimum = new javax.swing.JTextField();
+        maksimum = new javax.swing.JTextField();
+        UstawWartosci = new javax.swing.JButton();
+        Kolory = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,30 +63,113 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
 
         jLabel2.setText("wartość:");
 
+        jLabel1.setText("wartość minimalna");
+
+        jLabel3.setText("wartość maksymalna");
+
+        minimum.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                minimumKeyReleased(evt);
+            }
+        });
+
+        maksimum.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                maksimumKeyReleased(evt);
+            }
+        });
+
+        UstawWartosci.setText("Ustaw");
+        UstawWartosci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UstawWartosciActionPerformed(evt);
+            }
+        });
+
+        Kolory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "czarny", "czerwony", "niebieski", "różowy" }));
+        Kolory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KoloryActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Kolor Slidera");
+
+        jLabel5.setText("Rodzaj główki");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(slider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 613, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(wartosc)
-                .addGap(58, 58, 58))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(maksimum, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                    .addComponent(minimum))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(UstawWartosci)
+                .addGap(131, 131, 131)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(Kolory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(wartosc)
+                        .addGap(58, 58, 58))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(slider1, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel2)
-                    .addComponent(wartosc))
-                .addGap(73, 73, 73))
+                .addComponent(slider1, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(wartosc)
+                                    .addComponent(Kolory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(minimum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(maksimum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(UstawWartosci)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jButton1)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -85,26 +177,66 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        slider1.setRotate();
+        slider1.Rotate();
         slider1.repaint();
-        wartosc.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void slider1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_slider1MouseClicked
         // TODO add your handling code here:
-        slider1.setKlik(evt.getX(),evt.getY());
+        slider1.setSzer(evt.getX());
+        slider1.setWys(evt.getY());
         slider1.repaint();
-        slider1.setWartosc();
+        slider1.setWartosc(0);
         wartosc.setText(String.valueOf(slider1.getWartosc()));
     }//GEN-LAST:event_slider1MouseClicked
 
     private void slider1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_slider1MouseDragged
         // TODO add your handling code here:
-        slider1.setKlik(evt.getX(),evt.getY());
+        slider1.setSzer(evt.getX());
+        slider1.setWys(evt.getY());
         slider1.repaint();
-        slider1.setWartosc();
+        slider1.setWartosc(0);
         wartosc.setText(String.valueOf(slider1.getWartosc()));
     }//GEN-LAST:event_slider1MouseDragged
+
+    private void minimumKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_minimumKeyReleased
+        // TODO add your handling code here:
+        if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
+           
+            } else {
+               minimum.setText("");
+            }
+    }//GEN-LAST:event_minimumKeyReleased
+
+    private void maksimumKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_maksimumKeyReleased
+        // TODO add your handling code here:
+            if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') {
+           
+            } else {
+               maksimum.setText("");
+            }
+    }//GEN-LAST:event_maksimumKeyReleased
+
+    private void UstawWartosciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UstawWartosciActionPerformed
+        // TODO add your handling code here:
+        if(Integer.parseInt(maksimum.getText()) > Integer.parseInt(minimum.getText())){
+        slider1.setMaksimum(maksimum.getText());
+        slider1.setMinimum(minimum.getText());
+        }else{
+        slider1.setMaksimum(minimum.getText());
+        slider1.setMinimum(maksimum.getText());
+        }
+        
+        slider1.repaint();
+        slider1.setWartosc(0);
+        wartosc.setText(String.valueOf(slider1.getWartosc()));
+    }//GEN-LAST:event_UstawWartosciActionPerformed
+
+    private void KoloryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KoloryActionPerformed
+        // TODO add your handling code here:
+                    slider1.setKolor(Kolory.getSelectedItem().toString());
+                    slider1.repaint();
+    }//GEN-LAST:event_KoloryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,8 +274,17 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Kolory;
+    private javax.swing.JButton UstawWartosci;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField maksimum;
+    private javax.swing.JTextField minimum;
     private suwakkomponent.Slider slider1;
     private javax.swing.JLabel wartosc;
     // End of variables declaration//GEN-END:variables
