@@ -39,7 +39,7 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
         Kolory = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Glowki = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,7 +97,12 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
 
         jLabel5.setText("Rodzaj główki");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Glowki.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "prostokat", "trojkat", "kolo" }));
+        Glowki.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GlowkiActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,8 +127,8 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
                 .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                        .addComponent(Glowki, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(wartosc)
@@ -154,7 +159,7 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
                                     .addComponent(jLabel2)
                                     .addComponent(wartosc)
                                     .addComponent(Kolory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(Glowki, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel1)
@@ -234,9 +239,15 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
 
     private void KoloryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KoloryActionPerformed
         // TODO add your handling code here:
-                    slider1.setKolor(Kolory.getSelectedItem().toString());
-                    slider1.repaint();
+        slider1.setKolor(Kolory.getSelectedItem().toString());
+        slider1.repaint();
     }//GEN-LAST:event_KoloryActionPerformed
+
+    private void GlowkiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GlowkiActionPerformed
+        // TODO add your handling code here:
+        slider1.setGlowka(Glowki.getSelectedIndex()+1);
+        slider1.repaint();
+    }//GEN-LAST:event_GlowkiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,10 +285,10 @@ public class SuwakAplikacjaTestująca extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Glowki;
     private javax.swing.JComboBox<String> Kolory;
     private javax.swing.JButton UstawWartosci;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
